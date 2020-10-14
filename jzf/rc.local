@@ -1,0 +1,24 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+echo "2048" > /sys/block/sda/queue/nr_requests
+HD_TYPE=$(megacli -PdList -aAll -NoLog | grep "^Media Type" | head -n 1 | awk -F ': ' '{print $2}')
+if [ "$HD_TYPE" == "Hard Disk Device" ]; then
+    echo "deadline" > /sys/block/sda/queue/scheduler
+elif [ "$HD_TYPE" == "Solid State Device" ]; then
+    echo "noop" > /sys/block/sda/queue/scheduler
+else
+    echo "set io scheduler ERROR, check /etc/rc.local and /sys/block/sda/queue/scheduler" > /root/jzfUbuntu1804/jzf/set_io_scheduler.log
+fi
+
+exit 0
