@@ -22,4 +22,4 @@ parted -s /dev/sda rm ${TMP_PART_NUM}
 sed -i '\/TMP/d' /etc/fstab
 
 cp /root/jzfUbuntu1804/jzf/rc.local /etc/
-
+chmod +x /etc/rc.local
