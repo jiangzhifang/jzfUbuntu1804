@@ -9,5 +9,5 @@ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted univers
 deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
 deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
 
-deb http://hwraid.le-vert.net/ubuntu precise main
+deb http://hwraid.le-vert.net/ubuntu precise main
 
