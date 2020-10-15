@@ -8,7 +8,7 @@ cp /root/jzfUbuntu1804/jzf/99-tbcsysctl.conf /etc/sysctl.d/
 cp /etc/apt/sources.list /etc/apt/sources.list.bak
 cp /root/jzfUbuntu1804/jzf/sources.list /etc/apt/
 sudo apt-get update 
-sudo apt install gnupg -y
+sudo apt install gnupg openssh-server -y
 sudo wget -O - http://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key | sudo apt-key add -
 sudo apt-get update
 sudo apt-get -y install megacli
